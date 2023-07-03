@@ -9,7 +9,6 @@ import {
   Query,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
-import { TaskStatus } from './task-status.enum';
 import { CreateTaskDto } from './task-dto/createTask.dto';
 import { GetTasksFilterDto } from './task-dto/getTasksFilter.dto';
 import { UpdateTaskStatusDto } from './task-dto/updateTaskStatus.dto';
@@ -43,9 +42,6 @@ export class TasksController {
   }
   @Get()
   getTasks(@Query() tasksFilter: GetTasksFilterDto): Promise<Task[]> {
-    // if (Object.keys(tasksFilter).length > 0) {
-    //   return this.tasksService.searchTasks(tasksFilter);
-    // }
     return this.tasksService.getTasks(tasksFilter);
   }
 }

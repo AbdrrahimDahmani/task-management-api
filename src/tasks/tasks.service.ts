@@ -8,7 +8,7 @@ import { Task } from './task.entity';
 @Injectable()
 export class TasksService {
   constructor(
-    @InjectRepository(Task)
+    @InjectRepository(TaskRepository)
     private taskRepository: TaskRepository,
   ) {}
 
